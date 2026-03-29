@@ -33,8 +33,13 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
+    volumes:
+      - sql-data:/var/opt/mssql
     networks:
       - cloud-network
 networks:
   cloud-network:
     driver: bridge
+
+volumes:
+  sql-data:
