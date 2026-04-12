@@ -13,12 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 3. Pobranie Connection Stringa
-var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")
-    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+// 3. Pobranie Connection Stringa z konfiguracji (Secret Manager przez ENV)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // 4. Rejestracja bazy danych MS SQL Server
-// Rejestracja bazy danych z mechanizmem ponawiania prób (Retry Logic)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString,
         sqlOptions => sqlOptions.EnableRetryOnFailure(
