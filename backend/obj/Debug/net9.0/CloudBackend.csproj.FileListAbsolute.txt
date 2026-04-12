@@ -164,3 +164,4 @@ C:\Users\1140s\OneDrive\Pulpit\A65913\backend\obj\Debug\net9.0\refint\CloudBacke
 C:\Users\1140s\OneDrive\Pulpit\A65913\backend\obj\Debug\net9.0\CloudBackend.pdb
 C:\Users\1140s\OneDrive\Pulpit\A65913\backend\obj\Debug\net9.0\CloudBackend.genruntimeconfig.cache
 C:\Users\1140s\OneDrive\Pulpit\A65913\backend\obj\Debug\net9.0\ref\CloudBackend.dll
+C:\Users\1140s\OneDrive\Pulpit\A65913\backend\obj\Debug\net9.0\swae.build.ex.cache
