@@ -1,13 +1,13 @@
 ```tsx
 import { useEffect, useState } from 'react';
-import api from './api';
+import api from '../api'; // jeśli api.ts jest w src/
 
 type Task = {
   id: number;
   name: string;
   isCompleted: boolean;
 };
-`
+
 export default function Dashboard() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
@@ -59,60 +59,67 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#121212',
-      color: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      paddingTop: '50px'
-    }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#121212',
+        color: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: '50px'
+      }}
+    >
+      {/* ZŁOTY TYTUŁ */}
       <h1
-  style={{
-    fontSize: '48px',
-    marginBottom: '30px',
-    color: '#FFD700', // złoty kolor
-    fontWeight: 'bold',
-  }}
->
-  ☁️ Cloud App Dashboard
-</h1>
+        style={{
+          fontSize: '48px',
+          marginBottom: '30px',
+          color: '#FFD700',
+          fontWeight: 'bold'
+        }}
+      >
+        ☁️ Cloud App Dashboard
+      </h1>
 
-<div style={{ marginBottom: '30px' }}>
-  <input
-    type="text"
-    placeholder="Wpisz nowe zadanie..."
-    value={newTask}
-    onChange={(e) => setNewTask(e.target.value)}
-    style={{
-      padding: '12px',
-      borderRadius: '8px',
-      border: '1px solid #444',
-      marginRight: '10px',
-      width: '260px',
-      background: '#1e1e1e',
-      color: 'white',
-      outline: 'none',
-    }}
-  />
+      {/* INPUT + BUTTON */}
+      <div style={{ marginBottom: '30px' }}>
+        <input
+          type="text"
+          placeholder="Wpisz nowe zadanie..."
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          style={{
+            padding: '12px',
+            borderRadius: '8px',
+            border: '1px solid #444',
+            marginRight: '10px',
+            width: '260px',
+            background: '#1e1e1e',
+            color: 'white',
+            outline: 'none'
+          }}
+        />
+
         <button
           onClick={addTask}
           style={{
-            padding: '10px 15px',
-            borderRadius: '6px',
+            padding: '12px 18px',
+            borderRadius: '8px',
             border: 'none',
-            background: '#007bff',
-            color: 'white',
-            cursor: 'pointer'
+            background: '#FFD700',
+            color: '#000',
+            cursor: 'pointer',
+            fontWeight: 'bold'
           }}
         >
           Dodaj Zadanie
         </button>
       </div>
 
+      {/* LISTA TASKÓW */}
       <ul style={{ listStyle: 'none', padding: 0 }}>
-        {tasks.map(task => (
+        {tasks.map((task) => (
           <li
             key={task.id}
             style={{
@@ -129,7 +136,7 @@ export default function Dashboard() {
               alignItems: 'center',
               color: '#000',
               boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
-              userSelect: 'none' // 👈 TO ROZWIĄZUJE TWÓJ PROBLEM
+              userSelect: 'none'
             }}
           >
             <span
