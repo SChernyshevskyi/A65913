@@ -21,5 +21,6 @@ Ten projekt został zaplanowany z myślą o usługach PaaS (Platform as a Servic
 - [x] **Artefakt 5:** System gotowy na chmurę.
 - [x] **Artefakt 6:** Aplikacja wdrożona w Google Cloud
 - [x] **Artefakt 7:** Zabezpieczona aplikacja
+- [x] **Artefakt 8:** Wybudowany “bezpiecznik" punkt 8.1 i punkt 8.2 są zrobione 
  
 > **Informacja:** Ten plik będzie ewoluował. W kolejnych etapach dodamy tutaj sekcje 'Quick Start', opis zmiennych środowiskowych oraz instrukcję wdrożenia (CI/CD).
